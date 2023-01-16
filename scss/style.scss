@@ -1,0 +1,443 @@
+/*====================================================
+based on sanitize.css
+====================================================*/
+/* ボックスのサイズ変更のデフォルトはボーダーボックス */
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+/* 疑似要素は、テキストの装飾と垂直方向の配置を継承 */
+::before, ::after {
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+
+html {
+  cursor: default; /* カーソルは、非自明なインターフェイスを示唆するためにのみ変更 */
+  line-height: 1.5; /* テキストはすべてのブラウザーで快適な行の高さに */
+  -moz-tab-size: 4;
+  tab-size: 4; /* すべてのブラウザでタブはスペース4つ分 */
+  -webkit-tap-highlight-color: transparent; /* iOS(safari)でリンクのグレーのハイライトを削除 */
+  -ms-text-size-adjust: 100%; /* iOS(safari)でリンクのグレーのハイライトを削除 */
+  -webkit-text-size-adjust: 100%; /* Windows PhoneのIEとiOSのsafariで向きを変更した後にフォントサイズが調整されるのを防ぐ */
+  word-break: break-word; /* オーバーフローを防ぐために単語を分割 */
+  scroll-behavior: smooth; /* 内部リンクのジャンプは滑らかに動作 */
+}
+/* ドキュメントの大枠にマージンもパディングも使用しない */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "YakuHanJPs", "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    line-height: 2;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: 0.5rem;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0.67rem 0;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin: 0.58625rem 0;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 0.5025rem 0;
+}
+
+h4 {
+    font-size: 1.25rem;
+    margin: 0.41875rem 0;
+}
+
+h5 {
+    font-size: 1.2rem;
+    margin: 0.402rem 0;
+}
+
+p, h6 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+small {
+    font-weight: 0.75rem;
+}
+/* Chrome, Edge, IE, Safariでネストされたリストのマージンを削除する */
+dl dl, dl ol, dl ul, ol dl, ul dl {
+    margin: 0;
+}
+
+/* Edge18以上, IEでネストされたリストのマージンを削除する */
+ol ol, ol ul, ul ol, ul ul {
+    margin: 0;
+}
+
+hr {
+  height: 0; /* Firefoxでサイズを修正 */
+  overflow: visible; /* Edge18以上, IEでのはみ出しを表示する */
+}
+
+/* IEディスプレイ要素を修正 */
+main {
+  display: block;    
+}
+
+/* すべてのブラウザでナビゲーションリストのリストの装飾を削除 */
+nav ul, nav ol {
+    list-style: none;
+    padding: 0;
+}
+
+pre {
+    font-family: monospace, monospace; /* すべてのブラウザで文字サイズの継承と拡大縮小を修正する */
+    font-size: 1em; /* すべてのブラウザで、'em'のフォントサイズを修正する。 */
+}
+
+/* IE10でアクティブなリンクのグレーの背景を削除する */
+a {
+  background-color: transparent;
+}
+
+/* Edge18以上, IE, Safariでテキストの装飾を修正する */
+abbr[title] {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+/* Chrome, Edge, Safariでフォントの太さを修正する */
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace, monospace; /* すべてのブラウザで文字サイズの継承と拡大縮小を修正する */
+  font-size: 1em; /* すべてのブラウザで、'em'のフォントサイズを修正する。 */
+}
+
+/* すべてのブラウザで、フォントサイズを修正する。 */
+small {
+  font-size: 80%;
+}
+
+/* すべてのブラウザで、メディア要素の垂直位置を変更する */
+audio, canvas, iframe, img, svg, video {
+  vertical-align: middle;
+}
+
+/* IE9で、displayプロパティを修正する */
+audio, video {
+  display: inline-block;
+}
+
+/* すべてのブラウザで、フォントサイズを修正する。 */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* すべてのブラウザで、iframeのボーダーを削除する */
+iframe {
+  border-style: none;
+}
+
+/* IE10で、画像のボーダーを削除する */
+img {
+  border-style: none;
+}
+
+/* すべてのブラウザで、文字色と同じ塗りつぶし色になるように変更 */
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+/* IEで、はみ出しを隠す */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* すべてのブラウザで、隣接するボーダーを重ねて表示する */
+table {
+  border-collapse: collapse;
+}
+
+/* Safariで、マージンを削除する */
+button, input, select {
+  margin: 0;
+}
+
+button {
+  overflow: visible; /* IEではみ出しを表示する */
+  text-transform: none; /* Edge18以下, Firefox, IEでテキストの大文字小文字の継承を削除する */
+}
+
+/* iOS, Safariで、ボタンのスタイルを設定できるように修正 */
+button, [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: button;
+}
+
+fieldset {
+  border: 1px solid #a0a0a0; /* すべてのブラウザで、一貫性があるデザインに変更 */
+  padding: 0.35em 0.75em 0.625em; /* Firefoxでパディングを修正 */
+}
+
+/* Edge18以下, IEで、はみ出しを表示する */
+input {
+  overflow: visible;
+}
+
+legend {
+  color: inherit; /* IEでfieldset要素から色の継承を修正 */
+  display: table; /* Edge18以下, IEで文字の改行を修正 */
+  max-width: 100%; /* Edge18以下, IEで文字の改行を修正 */
+  white-space: normal; /* Edge18以下, IEで文字の改行を修正 */
+}
+
+progress {
+  display: inline-block; /* Edge18以下、IEでディスプレイ要素を修正 */
+  vertical-align: baseline; /* Chrome, Edge, Firefoxで垂直位置を修正 */
+}
+
+/* Firefoxで、テキストの大文字小文字の継承を削除する */
+select {
+  text-transform: none;
+}
+
+textarea {
+  margin: 0; /* Firefox, Safariで、マージンを削除 */
+  overflow: auto;  /* IEでデフォルトの垂直のスクロールバーを削除 */
+  resize: vertical; /* すべてのブラウザで方向 */
+}
+
+/**
+ * Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  padding: 0;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome, Edge, and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Safari.
+ */
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+ * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+ */
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style upload buttons in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/**
+ * Remove the inner border and padding of focus outlines in Firefox.
+ */
+
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus outline styles unset by the previous rule in Firefox.
+ */
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Remove the additional :invalid styles in Firefox.
+ */
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/* Interactive
+ * ========================================================================== */
+
+/*
+ * Add the correct display in Edge 18- and IE.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct styles in Edge 18-, IE, and Safari.
+ */
+
+dialog {
+  background-color: white;
+  border: solid;
+  color: black;
+  display: block;
+  height: -moz-fit-content;
+  height: -webkit-fit-content;
+  height: fit-content;
+  left: 0;
+  margin: auto;
+  padding: 1em;
+  position: absolute;
+  right: 0;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
+}
+
+dialog:not([open]) {
+  display: none;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Scripting
+ * ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+
+template {
+  display: none;
+}
+
+/* User interaction
+ * ========================================================================== */
+
+/*
+ * 1. Remove the tapping delay in IE 10.
+ * 2. Remove the tapping delay on clickable elements
+      in all browsers (opinionated).
+ */
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation; /* 1 */
+  touch-action: manipulation; /* 2 */
+}
+
+/**
+ * Add the correct display in IE 10-.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/* Accessibility
+ * ========================================================================== */
+
+/**
+ * Change the cursor on busy elements in all browsers (opinionated).
+ */
+
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+/*
+ * Change the cursor on control elements in all browsers (opinionated).
+ */
+
+[aria-controls] {
+  cursor: pointer;
+}
+
+/*
+ * Change the cursor on disabled, not-editable, or otherwise
+ * inoperable elements in all browsers (opinionated).
+ */
+
+[aria-disabled="true"],
+[disabled] {
+  cursor: not-allowed;
+}
+
+/*
+ * Change the display on visually hidden accessible elements
+ * in all browsers (opinionated).
+ */
+
+[aria-hidden="false"][hidden] {
+  display: initial;
+}
+
+[aria-hidden="false"][hidden]:not(:focus) {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}

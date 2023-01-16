@@ -1,0 +1,358 @@
+@charset "utf-8";
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+// Yaku-han Font
+@import url('https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp.min.css');
+
+//PCCS SCSS variables
+@import "pccs";
+$black: #333;
+
+//PCCS Vividトーン
+//$orange:       $v4;
+//$yellow:       $v8;
+//$green:        $v12;
+//$turquoise:    $v14;
+//$cyan:         $v16;
+//$blue:         $v18;
+//$purple:       $v22;
+//$red:          $v2;
+
+//PCCS Brightトーン
+$orange:       $b4;
+$yellow:       $b8;
+$green:        $b12;
+$turquoise:    $b14;
+$cyan:         $b16;
+$blue:         $b18;
+$purple:       $b22;
+$red:          $b2;
+
+//PCCS Strongトーン
+//$orange:       $s6;
+//$yellow:       $s8;
+//$green:        $s12;
+//$turquoise:    $s14;
+//$cyan:         $s16;
+//$blue:         $s18;
+//$purple:       $s22;
+//$red:          $s2;
+
+//PCCS Deepトーン
+//$orange:       $dp6;
+//$yellow:       $dp8;
+//$green:        $dp12;
+//$turquoise:    $dp14;
+//$cyan:         $dp16;
+//$blue:         $dp18;
+//$purple:       $dp22;
+//$red:          $dp2;
+
+//PCCS Light+トーン
+//$orange:       $ltp6;
+//$yellow:       $ltp8;
+//$green:        $ltp12;
+//$turquoise:    $ltp14;
+//$cyan:         $ltp16;
+//$blue:         $ltp18;
+//$purple:       $ltp22;
+//$red:          $ltp2;
+
+//PCCS Lightトーン
+//$orange:       $lt6;
+//$yellow:       $lt8;
+//$green:        $lt12;
+//$turquoise:    $lt14;
+//$cyan:         $lt16;
+//$blue:         $lt18;
+//$purple:       $lt22;
+//$red:          $lt2;
+
+//PCCS Softトーン
+//$orange:       $sf6;
+//$yellow:       $sf8;
+//$green:        $sf12;
+//$turquoise:    $sf14;
+//$cyan:         $sf16;
+//$blue:         $sf18;
+//$purple:       $sf22;
+//$red:          $sf2;
+
+//PCCS Dullトーン
+//$orange:       $d6;
+//$yellow:       $d8;
+//$green:        $d12;
+//$turquoise:    $d14;
+//$cyan:         $d16;
+//$blue:         $d18;
+//$purple:       $d22;
+//$red:          $d2;
+
+//PCCS Darkトーン
+//$orange:       $dk6;
+//$yellow:       $dk8;
+//$green:        $dk12;
+//$turquoise:    $dk14;
+//$cyan:         $dk16;
+//$blue:         $dk18;
+//$purple:       $dk22;
+//$red:          $dk2;
+
+//PCCS Pale+トーン
+//$orange:       $pp6;
+//$yellow:       $pp8;
+//$green:        $pp12;
+//$turquoise:    $pp14;
+//$cyan:         $pp16;
+//$blue:         $pp18;
+//$purple:       $pp22;
+//$red:          $pp2;
+
+//PCCS Paleトーン
+//$orange:       $p6;
+//$yellow:       $p8;
+//$green:        $p12;
+//$turquoise:    $p14;
+//$cyan:         $p16;
+//$blue:         $p18;
+//$purple:       $p22;
+//$red:          $p2;
+
+//PCCS LightGrayishトーン
+//$orange:       $ltg6;
+//$yellow:       $ltg8;
+//$green:        $ltg12;
+//$turquoise:    $ltg14;
+//$cyan:         $ltg16;
+//$blue:         $ltg18;
+//$purple:       $ltg22;
+//$red:          $ltg2;
+
+//PCCS Grayishトーン
+//$orange:       $g6;
+//$yellow:       $g8;
+//$green:        $g12;
+//$turquoise:    $g14;
+//$cyan:         $g16;
+//$blue:         $g18;
+//$purple:       $g22;
+//$red:          $g2;
+
+//PCCS DarkGrayishトーン
+
+//$orange:       $dkg6;
+//$yellow:       $dkg8;
+//$green:        $dkg12;
+//$turquoise:    $dkg14;
+//$cyan:         $dkg16;
+//$blue:         $dkg18;
+//$purple:       $dkg22;
+//$red:          $dkg2;
+
+// Update Bulma's global variables
+$family-sans-serif: YakuHanJP, Noto Sans JP, 'ヒラギノ角ゴ Pro W3','ヒラギノ角ゴ W3','Hiragino Kaku Gothic Pro W3','Hiragino Kaku Gothic ProN','メイリオ',Meiryo,sans-serif;
+//$family-primary: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+//$family-secondary: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+
+$primary: $purple;
+$link: $red;
+$size-1: 3rem;
+$size-2: 2.5rem;
+$size-3: 2rem;
+$size-4: 1.5rem;
+$size-5: 1.25rem;
+$size-6: 1rem;
+$size-7: 0.75rem;
+$block-spacing: 1.5rem;
+$heading-height: 1.125;
+$paragraph-height: 1.75;
+$mb-5: 1.5rem;
+$gap: 32px;
+//$tablet: 769px;
+//$desktop: 960px + (2 * $gap);
+//$widescreen: 1152px + (2 * $gap);
+//$fullhd: 1344px + (2 * $gap);
+//$easing: ease-out;
+//$radius-small: 2px;
+//$radius: 4px;
+//$radius-large: 6px;
+//$radius-rounded: 290486px;
+//$speed: 86ms;
+$text: $black;
+
+// Import only what you need from Bulma
+@import "bulma/sass/utilities/_all";
+@import "bulma/sass/base/_all";
+@import "bulma/sass/elements/_all";
+@import "bulma/sass/form/_all";
+@import "bulma/sass/components/_all";
+@import "bulma/sass/grid/_all";
+@import "bulma/sass/helpers/_all";
+@import "bulma/sass/layout/_all";
+
+//default css
+h1 {
+    font-size: $size-1;
+    line-height: $heading-height;
+    margin-bottom: $mb-5;
+}
+h2 {
+    font-size: $size-2;
+    line-height: $heading-height;
+    margin-bottom: $mb-5;
+}
+h3 {
+    font-size: $size-3;
+    line-height: $heading-height;
+    margin-bottom: $mb-5;
+}
+h4 {
+    font-size: $size-4;
+    line-height: $heading-height;
+    margin-bottom: $mb-5;
+}
+h5 {
+    font-size: $size-5;
+    line-height: $heading-height;
+    margin-bottom: $mb-5;
+}
+h6 {
+    font-size: $size-6;
+    line-height: $heading-height;
+    margin-bottom: $mb-5;
+}
+
+p {
+    margin-bottom: 1rem;
+    line-height: $paragraph-height;
+}
+
+small {
+    font-size: $size-7;
+    line-height: $paragraph-height;
+    margin-bottom: 1rem;
+}
+
+button {
+    background-color: white;
+    border-color: $light;
+    border-width: 1px;
+    color: $dark;
+    cursor: pointer;
+    justify-content: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-appearance: none;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 2.5em;
+    line-height: 1.5;
+    position: relative;
+    vertical-align: top;
+    &:active {
+        border-color: #4a4a4a;
+        color: $dark;        
+    }
+    &:focus {
+        border-color: #4a4a4a;
+        color: $dark;        
+    }
+    &:hover {
+        border-color: #b5b5b5;
+        color: $dark;        
+    }
+}
+button, .button {
+    padding-bottom: calc(0.55em - 1px);
+    padding-top: calc(0.45em - 1px);
+}
+
+table {
+    background-color: white;
+    color: $dark;
+    border-collapse: collapse;
+    border-spacing: 0;
+    th {
+        color: $dark;
+    }
+    td, th {
+        border: 1px solid $dark;
+        border-width: 0 0 1px;
+        padding: 0.4em 0.85em;
+        vertical-align: top;        
+    }
+    thead {
+        td, th {
+            border-width: 0 0 2px;
+            color: $dark;            
+        }
+    }
+    tbody {
+        background-color: transparent;        
+    }
+}
+.table {
+    td, th {
+        padding: 0.4em 0.85em;        
+    }
+}
+
+input, textarea {
+    box-shadow: inset 0 0.0625em 0.125em $dark;
+    max-width: 100%;
+    width: 100%;
+}
+
+
+input, select, textarea {
+    background-color: white;
+    border-color: $light;
+    border-radius: 0.375em;
+    color: $dark;
+    -webkit-appearance: none;
+    align-items: center;
+    border: 1px solid $light;
+    display: inline-flex;
+    font-size: 1rem;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: calc(0.75em - 1px);
+    padding-right: calc(0.75em - 1px);
+    padding-top: calc(0.5em - 1px);
+    position: relative;
+    vertical-align: top;
+    &:focus {
+        color: #212529;
+        background-color: white;
+        border-color: #86b7fe;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem $light;
+    }
+}
+input, select {
+    height: 2.5em;
+}
+
+textarea:not([rows]) {
+    max-height: 40em;
+    min-height: 8em;
+}
+textarea {
+    display: block;
+    max-width: 100%;
+    min-width: 100%;
+    padding: calc(0.75em - 1px);
+    resize: vertical;
+}
+
+main ul, article ul {
+    list-style: disc;
+    list-style-position: inside;
+}

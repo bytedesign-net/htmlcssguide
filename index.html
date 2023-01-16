@@ -1,0 +1,39 @@
+<html lang="ja">
+  <head>
+    <title>HTML・CSSコーディングガイドライン</title>
+    <!-- bulma -->
+    <link rel="stylesheet" href="css/mystyle_bulma.css" />
+    <!-- jquery本体 -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script href="js/script.js"></script>
+  </head>
+
+  <body>
+    <main
+      id="content"
+      class="col-12 col-md-9 offset-md-3 pt-md-5 pb-md-5 px-5 bd-content"
+      src="index.md"
+    ></main>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      //mdファイル読み込み
+      $(document).ready(function () {
+        const target = $("#content");
+
+        $.ajax({
+          url: target[0].attributes["src"].value,
+        })
+          .success(function (data) {
+            target.append(marked(data));
+          })
+          .error(function (data) {
+            target.append("This content failed to load.");
+          });
+      });
+    </script>
+  </body>
+</html>
