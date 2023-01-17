@@ -14,29 +14,28 @@ Powered by [Google Style Guides](https://google.github.io/styleguide/)
 
 `<image>`や`<media>`、`<script>` などのエンディベッドコンテンツ(埋め込み要素)には可能な限り https を利用する。
 
-```
+```{.code-ng}
 <!-- 非推奨：プロトコルの省略 -->
-
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 <!-- 非推奨：httpの利用 -->
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+```
 
+```{.code-ok}
 <!-- 推奨 -->
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+```
 
+```{.code-ng}
 /* 非推奨：プロトコルの省略 */
-
 @import '//fonts.googleapis.com/css?family=Open+Sans';
-
 /* 非推奨: uses HTTP */
-
 @import 'http://fonts.googleapis.com/css?family=Open+Sans';
+```
 
+```{.code-ok}
 /* 推奨 */
-
 @import 'https://fonts.googleapis.com/css?family=Open+Sans';
 ```
 
