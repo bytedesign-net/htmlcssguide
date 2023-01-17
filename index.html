@@ -16,7 +16,6 @@
     <main
       id="content"
       class="col-12 col-md-9 offset-md-3 pt-md-5 pb-md-5 px-5 bd-content"
-      src="index.md"
     ></main>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
@@ -27,7 +26,8 @@
           .ajax(target[0].attributes["src"].value)
           // success
           .done(function (data, textStatus, jqXHR) {
-            target.append(marked(data));
+            console.log(data);
+            target.append(marked.parse(data));
           })
           // error
           .fail(function (jqXHR, textStatus, errorThrown) {
