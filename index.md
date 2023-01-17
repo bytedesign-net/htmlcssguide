@@ -1,6 +1,6 @@
 ﻿# **HTML・CSS コーディングガイドライン**
 
-create based on [Google Style Guides](https://google.github.io/styleguide/)
+Powered by [Google Style Guides](https://google.github.io/styleguide/)
 
 ## **1.はじめに**
 
