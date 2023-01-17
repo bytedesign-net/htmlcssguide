@@ -25,13 +25,13 @@
         const target = jQuery("#content");
 
         jQuery
-          .ajax({
-            url: target[0].attributes["src"].value,
-          })
-          .success(function (data) {
+          .ajax(target[0].attributes["src"].value)
+          // success
+          .done(function (data, textStatus, jqXHR) {
             target.append(marked(data));
           })
-          .error(function (data) {
+          // error
+          .fail(function (jqXHR, textStatus, errorThrown) {
             target.append("This content failed to load.");
           });
       });
