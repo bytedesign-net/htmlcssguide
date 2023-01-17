@@ -4,41 +4,41 @@ Powered by [Google Style Guides](https://google.github.io/styleguide/)
 
 ## **1.はじめに**
 
-本ガイドラインはスタッフのコーディング手法に規則・方針を作ることにより、クオリティの統一化と複数人でコーディングする際のコミュニケーションや引き継ぎの手間を削減するためのものです。スタッフはガイドラインがある意味と内容をよく理解し、ガイドラインに則ったコーディングを行ってください。
+本ガイドラインは個人またはチームにてコーディング手法に規則・方針を作ることにより、記法の統一化や複数人でコーディングする際のコミュニケーションの円滑化、担当者の引き継ぎの手間を削減するためのものです。
 
-なお、案件に独自のガイドラインやコーディングの指示がある場合にはそちらを優先してください。
-
-## **2 共通**
+## **2 一般事項**
 
 ### **2.1 共通のスタイル規則**
 
-#### **2.1.1 規則**
+#### **2.1.1 プロトコル**
 
-image や media、script などを指定するときに、可能な限り https を利用する。
+`<image>`や`<media>`、`<script>` などのエンディベッドコンテンツ(埋め込み要素)には可能な限り https を利用する。
 
+```
 <!-- 非推奨：プロトコルの省略 -->
 
-`    `<script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-`    `<!-- 非推奨：httpの利用 -->
+<!-- 非推奨：httpの利用 -->
 
-`    `<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 <!-- 推奨 -->
 
-`    `<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-/\* 非推奨：プロトコルの省略 \*/
+/* 非推奨：プロトコルの省略 */
 
-`    `@import '//fonts.googleapis.com/css?family=Open+Sans';
+@import '//fonts.googleapis.com/css?family=Open+Sans';
 
-`    `/\* 非推奨: uses HTTP \*/
+/* 非推奨: uses HTTP */
 
-`    `@import 'http://fonts.googleapis.com/css?family=Open+Sans';
+@import 'http://fonts.googleapis.com/css?family=Open+Sans';
 
-/\* 推奨 \*/
+/* 推奨 */
 
-`    `@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+```
 
 #### **2.1.2 Link**
 
