@@ -19,6 +19,34 @@
     ></main>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script>
+      window.onload = function () {
+        marked_js_render();
+      };
+
+      /*
+       * 拡張の追加
+       */
+      function marked_js_render() {
+        // Set options
+        // `highlight` example uses https://highlightjs.org
+        marked.setOptions({
+          renderer: new marked.Renderer(),
+          /*
+          highlight: function(code, lang) {
+            const hljs = require('highlight.js');
+            const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+            return hljs.highlight(code, { language }).value;
+          },
+          */
+          langPrefix: false, // highlight.js css expects a top-level 'hljs' class.
+          //pedantic: false,
+          //gfm: true,
+          //breaks: false,
+          //sanitize: false,
+          //smartypants: false,
+          //xhtml: false
+        });
+      }
       //mdファイル読み込み
       jQuery(document).ready(function () {
         const target = jQuery("#content");
