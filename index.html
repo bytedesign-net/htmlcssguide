@@ -23,7 +23,7 @@
       jQuery(document).ready(function () {
         const target = jQuery("#content");
         jQuery
-          .ajax(target[0].attributes["src"].value)
+          .ajax("index.md")
           // success
           .done(function (data, textStatus, jqXHR) {
             console.log(data);
