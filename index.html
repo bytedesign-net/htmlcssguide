@@ -35,23 +35,41 @@
       function marked_js_render() {
         // Set options
         // `highlight` example uses https://highlightjs.org
+        //marked.setOptions({
+        //renderer: new marked.Renderer(),
+
+        // marked.js + highlight.js
+        var renderer = new marked.Renderer();
+
+        // code syntax hilightの編集
+        renderer.code = function (code, language) {
+          return (
+            "<pre" +
+            '><code class="hljs">' +
+            hljs.highlightAuto(code).value +
+            "</code></pre>"
+          );
+        };
+
         marked.setOptions({
-          renderer: new marked.Renderer(),
-          /*
+          renderer: renderer,
+        });
+
+        /*
           highlight: function (code, lang) {
             const hljs = require("highlight.js");
             const language = hljs.getLanguage(lang) ? lang : "plaintext";
             return hljs.highlight(code, { language }).value;
           },
           */
-          langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
-          //pedantic: false,
-          //gfm: true,
-          breaks: true,
-          sanitize: true,
-          //smartypants: false,
-          //xhtml: false,
-        });
+        //langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
+        //pedantic: false,
+        //gfm: true,
+        //breaks: true,
+        //sanitize: true,
+        //smartypants: false,
+        //xhtml: false,
+        //});
       }
       jQuery(document).ready(function () {
         const target = jQuery("#content");
