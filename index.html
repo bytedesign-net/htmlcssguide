@@ -21,6 +21,18 @@
     <script>
       //mdファイル読み込み
       jQuery(document).ready(function () {
+        // Set options
+        // `highlight` example uses https://highlightjs.org
+        marked.setOptions({
+          renderer: new marked.Renderer(),
+          highlight: function (code, lang) {
+            const hljs = require("highlight.js");
+            const language = hljs.getLanguage(lang) ? lang : "plaintext";
+            return hljs.highlight(code, { language }).value;
+          },
+          langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
+        });
+
         const target = jQuery("#content");
         jQuery
           .ajax("index.md")
@@ -37,9 +49,7 @@
     </script>
     <script href="js/script.js"></script>
   </head>
-
   <body>
-    <pre><code class="html"><a href="#">テスト</a></code></pre>
     <main
       id="content"
       class="col-12 col-md-9 offset-md-3 pt-md-5 pb-md-5 px-5 bd-content"
