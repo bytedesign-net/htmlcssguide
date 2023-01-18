@@ -57,7 +57,6 @@
           .ajax("index.md")
           // success
           .done(function (data, textStatus, jqXHR) {
-            console.log(data);
             target.append(marked.parse(data));
           })
           // error
