@@ -31,13 +31,20 @@ jQuery(document).ready(function () {
     .done(function (data, textStatus, jqXHR) {
       target.append(marked.parse(data));
       /*=== ローカルナビ生成 ===*/
-      let i = 1;
+      let i,
+        j = 1;
       jQuery(":header").each(function (n) {
         let heading = $(this);
         let headingText = heading.text();
         if (heading.is("h2")) {
           console.log("次の判定1");
-          jQuery(".panel").append('<p class="h2">' + headingText + "</p>");
+          if (i === 1) {
+            jQuery(".panel-tabs is-active").append(
+              "<a>" + headingText + "</a>"
+            );
+          } else {
+            jQuery(".panel-tabs").append("<a>" + headingText + "</a>");
+          }
         } else if (heading.is("h3")) {
           console.log("次の判定2");
           jQuery(".panel").append('<p class="h3">' + headingText + "</p>");
@@ -52,7 +59,7 @@ jQuery(document).ready(function () {
               headingText +
               "</a>"
           );
-          i++;
+          j++;
         }
       });
     })
