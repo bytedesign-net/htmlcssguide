@@ -19,13 +19,13 @@
     <!-- ソースコードのハイライト -->
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
     <script>
-        window.onload = function () {
-          marked_js_render();
-        };
+      //mdファイル読み込み
+      jQuery(document).ready(function () {
+        marked_js_render();
 
         /*
-          * 拡張の追加
-          */
+         * 拡張の追加
+         */
         function marked_js_render() {
           // Set options
           // `highlight` example uses https://highlightjs.org
