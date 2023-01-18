@@ -33,21 +33,17 @@ jQuery(document).ready(function () {
       target.append(marked.parse(data));
       /*=== ローカルナビ生成 ===*/
 
-      jQuery(":header").each(function () {
+      jQuery(":header").each(function (n) {
         let heading = $(this);
         let headingText = heading.text();
         let i = 1;
 
-        if (
-          heading !== jQuery("h2") ||
-          heading !== jQuery("h3") ||
-          heading !== jQuery("h4")
-        ) {
+        if (!heading.is("h2") || !heading.is("h3") || !heading.is("h4")) {
           return false;
         }
-        if (heading === jQuery("h2")) {
+        if (heading.is("h2")) {
           jQuery(".panel").append('<p class="h2">' + headingText + "</p>");
-        } else if (heading === jQuery("h3")) {
+        } else if (heading.is("h3")) {
           jQuery(".panel").append('<p class="h3">' + headingText + "</p>");
         } else {
           let headingId = "headline_" + i;
