@@ -14,20 +14,11 @@
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
-    <script href="js/script.js"></script>
-  </head>
-
-  <body>
-    <pre><code class="html"><a href="#">テスト</a></code></pre>
-    <main
-      id="content"
-      class="col-12 col-md-9 offset-md-3 pt-md-5 pb-md-5 px-5 bd-content"
-    ></main>
     <!-- マークダウンからhtmlの変換 -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <!-- ソースコードのハイライト -->
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
-    <script async>
+    <script>
       //mdファイル読み込み
       jQuery(document).ready(function () {
         const target = jQuery("#content");
@@ -44,6 +35,15 @@
           });
       });
     </script>
+    <script href="js/script.js"></script>
+  </head>
+
+  <body>
+    <pre><code class="html"><a href="#">テスト</a></code></pre>
+    <main
+      id="content"
+      class="col-12 col-md-9 offset-md-3 pt-md-5 pb-md-5 px-5 bd-content"
+    ></main>
     <script defer>
       hljs.highlightAll();
     </script>
