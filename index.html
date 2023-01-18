@@ -23,7 +23,7 @@
       class="col-12 col-md-9 offset-md-3 pt-md-5 pb-md-5 px-5 bd-content"
     ></main>
     <!-- ソースコードのハイライト -->
-    <!--<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
     <script>
       //mdファイル読み込み
       window.onload = function () {
@@ -37,11 +37,13 @@
         // `highlight` example uses https://highlightjs.org
         marked.setOptions({
           renderer: new marked.Renderer(),
+          /*
           highlight: function (code, lang) {
-            const hljs = require("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js");
+            const hljs = require("highlight.js");
             const language = hljs.getLanguage(lang) ? lang : "plaintext";
             return hljs.highlight(code, { language }).value;
           },
+          */
           langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
           //pedantic: false,
           //gfm: true,
@@ -57,6 +59,7 @@
           .ajax("index.md")
           // success
           .done(function (data, textStatus, jqXHR) {
+            console.log(data);
             target.append(marked.parse(data));
           })
           // error
