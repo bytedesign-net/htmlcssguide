@@ -27,10 +27,10 @@
     <!-- ソースコードのハイライト -->
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
     <script>
-      hljs.highlightAll();
-
       //mdファイル読み込み
       jQuery(document).ready(function () {
+        hljs.highlightAll();
+
         const target = jQuery("#content");
         jQuery
           .ajax("index.md")
