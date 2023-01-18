@@ -501,21 +501,25 @@ HTMLタグ内の属性の書き順は以下の通りとする。
 
 HTML5 ではデフォルトで解釈されるため必要ない。
 
+```code-ng
 <!-- 非推奨 -->
-
 <link rel="stylesheet" href="https://www.google.com/css/maia.css" type="text/css">
+```
 
+```code-ok
 <!-- 推奨 -->
-
 <link rel="stylesheet" href="https://www.google.com/css/maia.css">
+```
 
+```code-ng
 <!-- 非推奨 -->
-
 <script src="https://www.google.com/js/gweb/analytics/autotrack.js" type="text/javascript"></script>
+```
 
+```code-ok
 <!-- 推奨 -->
-
 <script src="https://www.google.com/js/gweb/analytics/autotrack.js"></script>
+```
 
 ### **3.2 HTML のフォーマットのルール**
 
