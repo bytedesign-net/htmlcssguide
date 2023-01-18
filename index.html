@@ -26,7 +26,33 @@
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
     <script>
       //mdファイル読み込み
-
+      window.onload = function () {
+        marked_js_render();
+      };
+      /*
+       * 拡張の追加
+       */
+      function marked_js_render() {
+        // Set options
+        // `highlight` example uses https://highlightjs.org
+        marked.setOptions({
+          renderer: new marked.Renderer(),
+          /*
+          highlight: function (code, lang) {
+            const hljs = require("highlight.js");
+            const language = hljs.getLanguage(lang) ? lang : "plaintext";
+            return hljs.highlight(code, { language }).value;
+          },
+          */
+          langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
+          //pedantic: false,
+          //gfm: true,
+          //breaks: false,
+          //sanitize: false,
+          //smartypants: false,
+          //xhtml: false,
+        });
+      }
       jQuery(document).ready(function () {
         const target = jQuery("#content");
         jQuery
