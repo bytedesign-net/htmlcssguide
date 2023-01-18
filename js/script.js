@@ -32,18 +32,33 @@ jQuery(document).ready(function () {
       console.log(data);
       target.append(marked.parse(data));
       /*=== ローカルナビ生成 ===*/
-      jQuery("h2").each(function (i) {
-        var heading = $(this);
-        var headingId = "headline_" + (i + 1);
-        var headingText = heading.text();
-        heading.attr("id", headingId);
-        jQuery(".panel").append(
-          '<a class="panel-block" href=\'#' +
-            headingId +
-            "'>" +
-            headingText +
-            "</a>"
-        );
+
+      jQuery(":header").each(function (i) {
+        let heading = $(this);
+        let headingText = heading.text();
+
+        if (
+          heading !== jQuery("h2") ||
+          heading !== jQuery("h3") ||
+          heading !== jQuery("h4")
+        ) {
+          return false;
+        }
+        if (heading === jQuery("h2")) {
+          jQuery(".panel").append('<p class="h2">' + headingText + "</p>");
+        } else if (heading === jQuery("h3")) {
+          jQuery(".panel").append('<p class="h3">' + headingText + "</p>");
+        } else {
+          let headingId = "headline_" + (i + 1);
+          heading.attr("id", headingId);
+          jQuery(".panel").append(
+            '<a class="h4 panel-block" href=\'#' +
+              headingId +
+              "'>" +
+              headingText +
+              "</a>"
+          );
+        }
       });
     })
     // error
