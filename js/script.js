@@ -33,9 +33,10 @@ jQuery(document).ready(function () {
       target.append(marked.parse(data));
       /*=== ローカルナビ生成 ===*/
 
-      jQuery(":header").each(function (i) {
+      jQuery(":header").each(function () {
         let heading = $(this);
         let headingText = heading.text();
+        let i = 1;
 
         if (
           heading !== jQuery("h2") ||
@@ -49,7 +50,7 @@ jQuery(document).ready(function () {
         } else if (heading === jQuery("h3")) {
           jQuery(".panel").append('<p class="h3">' + headingText + "</p>");
         } else {
-          let headingId = "headline_" + (i + 1);
+          let headingId = "headline_" + i;
           heading.attr("id", headingId);
           jQuery(".panel").append(
             '<a class="h4 panel-block" href=\'#' +
@@ -58,6 +59,7 @@ jQuery(document).ready(function () {
               headingText +
               "</a>"
           );
+          i++;
         }
       });
     })
