@@ -29,7 +29,6 @@ jQuery(document).ready(function () {
     .ajax("index.md")
     // success
     .done(function (data, textStatus, jqXHR) {
-      console.log(data);
       target.append(marked.parse(data));
       /*=== ローカルナビ生成 ===*/
       let i = 1;
