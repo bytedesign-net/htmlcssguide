@@ -3,6 +3,10 @@
     <title>HTML・CSSコーディングガイドライン</title>
     <!-- bulma -->
     <link rel="stylesheet" href="css/mystyle_bulma.css" />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <!-- jquery本体 -->
     <script
@@ -18,7 +22,10 @@
       id="content"
       class="col-12 col-md-9 offset-md-3 pt-md-5 pb-md-5 px-5 bd-content"
     ></main>
+    <!-- マークダウンからhtmlの変換 -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- ソースコードのハイライト -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
     <script>
       window.onload = function () {
         marked_js_render();
