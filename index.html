@@ -29,8 +29,6 @@
     <script>
       //mdファイル読み込み
       jQuery(document).ready(function () {
-        hljs.highlightAll();
-
         const target = jQuery("#content");
         jQuery
           .ajax("index.md")
@@ -44,6 +42,9 @@
             target.append("This content failed to load.");
           });
       });
+    </script>
+    <script>
+      hljs.highlightAll();
     </script>
   </body>
 </html>
