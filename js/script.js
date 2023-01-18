@@ -35,18 +35,13 @@ jQuery(document).ready(function () {
       jQuery(":header").each(function (n) {
         let heading = $(this);
         let headingText = heading.text();
-
-        if (!heading.is("h2") || !heading.is("h3") || !heading.is("h4")) {
-          console.log("最初の判定");
-          return false;
-        }
         if (heading.is("h2")) {
           console.log("次の判定1");
           jQuery(".panel").append('<p class="h2">' + headingText + "</p>");
         } else if (heading.is("h3")) {
           console.log("次の判定2");
           jQuery(".panel").append('<p class="h3">' + headingText + "</p>");
-        } else {
+        } else if (heading.is("h4")) {
           console.log("次の判定3");
           let headingId = "headline_" + i;
           heading.attr("id", headingId);
