@@ -28,24 +28,25 @@
     <!-- ソースコードのハイライト -->
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
     <script>
-      //mdファイル読み込み
-      jQuery(document).ready(function () {
-        const target = jQuery("#content");
-        jQuery
-          .ajax("index.md")
-          // success
-          .done(function (data, textStatus, jqXHR) {
-            console.log(data);
-            target.append(marked.parse(data));
-          })
-          // error
-          .fail(function (jqXHR, textStatus, errorThrown) {
-            target.append("This content failed to load.");
-          });
+      new Promise(function (resolve, reject) {
+        //mdファイル読み込み
+        jQuery(document).ready(function () {
+          const target = jQuery("#content");
+          jQuery
+            .ajax("index.md")
+            // success
+            .done(function (data, textStatus, jqXHR) {
+              console.log(data);
+              target.append(marked.parse(data));
+            })
+            // error
+            .fail(function (jqXHR, textStatus, errorThrown) {
+              target.append("This content failed to load.");
+            });
+        });
+      }).then(function (result) {
+        hljs.highlightAll();
       });
-    </script>
-    <script>
-      hljs.highlightAll();
     </script>
   </body>
 </html>
