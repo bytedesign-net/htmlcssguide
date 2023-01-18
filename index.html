@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <pre><code class="language-html"><a href="#">テスト</a></code></pre>
+    <pre><code class="html"><a href="#">テスト</a></code></pre>
     <main
       id="content"
       class="col-12 col-md-9 offset-md-3 pt-md-5 pb-md-5 px-5 bd-content"
@@ -28,25 +28,24 @@
     <!-- ソースコードのハイライト -->
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
     <script>
-      new Promise(function (resolve, reject) {
-        //mdファイル読み込み
-        jQuery(document).ready(function () {
-          const target = jQuery("#content");
-          jQuery
-            .ajax("index.md")
-            // success
-            .done(function (data, textStatus, jqXHR) {
-              console.log(data);
-              target.append(marked.parse(data));
-            })
-            // error
-            .fail(function (jqXHR, textStatus, errorThrown) {
-              target.append("This content failed to load.");
-            });
-        });
-      }).then(function (result) {
-        hljs.highlightAll();
+      //mdファイル読み込み
+      jQuery(document).ready(function () {
+        const target = jQuery("#content");
+        jQuery
+          .ajax("index.md")
+          // success
+          .done(function (data, textStatus, jqXHR) {
+            console.log(data);
+            target.append(marked.parse(data));
+          })
+          // error
+          .fail(function (jqXHR, textStatus, errorThrown) {
+            target.append("This content failed to load.");
+          });
       });
+    </script>
+    <script defer>
+      hljs.highlightAll();
     </script>
   </body>
 </html>
