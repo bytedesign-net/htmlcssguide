@@ -367,24 +367,6 @@ article ul {
   list-style-position: inside;
 }
 
-code,
 pre {
-  -moz-osx-font-smoothing: inherit;
-  -webkit-font-smoothing: inherit;
-  font-family: monospace;
-}
-pre {
-  -webkit-overflow-scrolling: inherit;
-  background-color: inherit;
-  color: inherit;
-  overflow-x: inherit;
-  padding: inherit;
-  white-space: inherit;
-  word-wrap: inherit;
-}
-
-pre code {
-  background-color: inherit;
-  color: inherit;
-  padding: inherit;
+  white-space: pre;
 }
