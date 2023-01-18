@@ -31,26 +31,23 @@ jQuery(document).ready(function () {
     .done(function (data, textStatus, jqXHR) {
       console.log(data);
       target.append(marked.parse(data));
+      /*=== ローカルナビ生成 ===*/
+      jQuery("h2").each(function (i) {
+        var heading = $(this);
+        var headingId = "headline_" + (i + 1);
+        var headingText = heading.text();
+        heading.attr("id", headingId);
+        jQuery(".panel").append(
+          '<a class="panel-block" href=\'#' +
+            headingId +
+            "'>" +
+            headingText +
+            "</a>"
+        );
+      });
     })
     // error
     .fail(function (jqXHR, textStatus, errorThrown) {
       target.append("This content failed to load.");
     });
-});
-
-jQuery(function () {
-  /*=== ローカルナビ生成 ===*/
-  jQuery("h2").each(function (i) {
-    var heading = $(this);
-    var headingId = "headline_" + (i + 1);
-    var headingText = heading.text();
-    heading.attr("id", headingId);
-    jQuery(".panel").append(
-      '<a class="panel-block" href=\'#' +
-        headingId +
-        "'>" +
-        headingText +
-        "</a>"
-    );
-  });
 });
