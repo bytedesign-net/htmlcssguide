@@ -24,47 +24,6 @@
     ></main>
     <!-- ソースコードのハイライト -->
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
-    <script>
-      //mdファイル読み込み
-      window.onload = function () {
-        marked_js_render();
-      };
-      /*
-       * 拡張の追加
-       */
-      function marked_js_render() {
-        // marked.js + highlight.js
-        var renderer = new marked.Renderer();
-
-        // code syntax hilightの編集
-        renderer.code = function (code, language) {
-          return (
-            "<pre" +
-            '><code class="hljs">' +
-            hljs.highlightAuto(code).value +
-            "</code></pre>"
-          );
-        };
-
-        marked.setOptions({
-          renderer: renderer,
-        });
-      }
-      jQuery(document).ready(function () {
-        const target = jQuery("#content");
-        jQuery
-          .ajax("index.md")
-          // success
-          .done(function (data, textStatus, jqXHR) {
-            console.log(data);
-            target.append(marked.parse(data));
-          })
-          // error
-          .fail(function (jqXHR, textStatus, errorThrown) {
-            target.append("This content failed to load.");
-          });
-      });
-    </script>
     <script href="js/script.js"></script>
     <script defer>
       hljs.highlightAll();
