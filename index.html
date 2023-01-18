@@ -20,9 +20,11 @@
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
     <script>
       //mdファイル読み込み
-      jQuery(document).ready(function () {
+      window.onload = function () {
         marked_js_render();
+      };
 
+      jQuery(document).ready(function () {
         /*
          * 拡張の追加
          */
