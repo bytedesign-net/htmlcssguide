@@ -2,13 +2,13 @@ pre {
   margin-bottom: 1rem;
   white-space: pre;
 }
-
-#localNav {
-  display: none;
-}
-
-#localNav.is-active {
-  display: block;
+@container (max-width: 1215px) {
+  #localNav {
+    display: none;
+  }
+  #localNav.is-active {
+    display: block;
+  }
 }
 
 .code-ng {
