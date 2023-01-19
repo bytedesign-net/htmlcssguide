@@ -37,7 +37,6 @@ jQuery(document).ready(function () {
         let heading = $(this);
         let headingText = heading.text();
         if (heading.is("h2")) {
-          console.log("次の判定1");
           if (i === 1) {
             jQuery(".panel-tabs is-active").append(
               "<a>" + headingText + "</a>"
@@ -46,10 +45,8 @@ jQuery(document).ready(function () {
             jQuery(".panel-tabs").append("<a>" + headingText + "</a>");
           }
         } else if (heading.is("h3")) {
-          console.log("次の判定2");
           jQuery(".panel").append('<p class="h3">' + headingText + "</p>");
         } else if (heading.is("h4")) {
-          console.log("次の判定3");
           let headingId = "headline_" + i;
           heading.attr("id", headingId);
           jQuery(".panel").append(
