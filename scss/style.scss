@@ -3,5 +3,13 @@ pre {
   white-space: pre;
 }
 
+#localNav {
+  display: none;
+}
+
+#localNav.is-active {
+  display: block;
+}
+
 .code-ng {
 }
