@@ -37,6 +37,7 @@ jQuery(document).ready(function () {
         let heading = $(this);
         let headingText = heading.text();
         if (heading.is("h2")) {
+          jQuery(".panel").append('<p class="h2">' + headingText + "</p>");
           if (i === 1) {
             jQuery(".panel-tabs is-active").append(
               "<a>" + headingText + "</a>"
