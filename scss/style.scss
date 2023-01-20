@@ -2,7 +2,9 @@ pre {
   margin-bottom: 1rem;
   white-space: pre;
 }
-
+.columns {
+  position: relative;
+}
 #localNav {
   position: fixed;
   top: 0;
