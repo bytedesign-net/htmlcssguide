@@ -2,6 +2,14 @@ pre {
   margin-bottom: 1rem;
   white-space: pre;
 }
+
+#localNav {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  overflow: scroll;
+}
+
 @media (max-width: 1023px) {
   #localNav {
     display: none;
