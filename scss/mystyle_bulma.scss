@@ -366,7 +366,9 @@ article ul {
   list-style: disc;
   list-style-position: inside;
 }
-
 pre {
   white-space: pre;
+}
+.navbar-item img {
+  max-height: inherit;
 }
