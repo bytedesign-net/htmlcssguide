@@ -2,7 +2,10 @@ pre {
   margin-bottom: 1rem;
   white-space: pre;
 }
-
+main {
+  position: absolute;
+  right: 0;
+}
 #localNav {
   position: fixed;
   top: 0;
@@ -14,6 +17,7 @@ pre {
 @media (max-width: 1023px) {
   #localNav {
     display: none;
+    left: 0;
   }
   #localNav.is-active {
     display: block;
