@@ -14,11 +14,6 @@ pre {
 }
 
 @media (max-width: 1023px) {
-  main {
-    position: absolute;
-    right: 0;
-  }
-
   #localNav {
     display: none;
     left: 0;
@@ -27,6 +22,11 @@ pre {
     display: block;
   }
 }
-
+@media (min-width: 1024px) {
+  main {
+    position: absolute;
+    right: 0;
+  }
+}
 .code-ng {
 }
