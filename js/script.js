@@ -37,7 +37,7 @@ jQuery(document).ready(function () {
         let heading = $(this);
         let headingText = heading.text();
         if (heading.is("h2")) {
-          jQuery(".panel").append('<p class="h2">' + headingText + "</p>");
+          jQuery(".panel").append('<p class="h2 mb-0">' + headingText + "</p>");
           if (i === 1) {
             jQuery(".panel-tabs is-active").append(
               "<a>" + headingText + "</a>"
@@ -46,7 +46,7 @@ jQuery(document).ready(function () {
             jQuery(".panel-tabs").append("<a>" + headingText + "</a>");
           }
         } else if (heading.is("h3")) {
-          jQuery(".panel").append('<p class="h3">' + headingText + "</p>");
+          jQuery(".panel").append('<p class="h3 mb-0">' + headingText + "</p>");
         } else if (heading.is("h4")) {
           let headingId = "headline_" + j;
           heading.attr("id", headingId);
