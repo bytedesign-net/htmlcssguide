@@ -6,6 +6,9 @@ pre {
   margin-bottom: 1rem;
   white-space: pre;
 }
+h2 {
+  scroll-margin-top: 66px;
+}
 .columns {
   position: relative;
 }
@@ -15,9 +18,6 @@ pre {
   height: 100vh;
   overflow: scroll;
   background-color: white;
-}
-main {
-  scroll-margin-top: 66px;
 }
 
 @media (max-width: 1023px) {
