@@ -48,7 +48,7 @@ jQuery(document).ready(function () {
         } else if (heading.is("h3")) {
           jQuery(".panel").append('<p class="h3">' + headingText + "</p>");
         } else if (heading.is("h4")) {
-          let headingId = "headline_" + i;
+          let headingId = "headline_" + j;
           heading.attr("id", headingId);
           jQuery(".panel").append(
             '<a class="h4 panel-block" href=\'#' +
