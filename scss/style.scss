@@ -12,6 +12,9 @@ pre {
   overflow: scroll;
   background-color: white;
 }
+main {
+  scroll-margin-top: 66px;
+}
 
 @media (max-width: 1023px) {
   #localNav {
