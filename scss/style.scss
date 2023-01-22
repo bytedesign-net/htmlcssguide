@@ -18,12 +18,13 @@ h4 {
   height: 100vh;
   overflow: scroll;
   background-color: white;
+  margin-top: 66px;
 }
 
 @media (max-width: 1023px) {
   #localNav {
     display: none;
-    left: 0;
+    right: 0;
   }
   #localNav.is-active {
     display: block;
