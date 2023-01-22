@@ -51,7 +51,7 @@ jQuery(document).ready(function () {
           let headingId = "headline_" + j;
           heading.attr("id", headingId);
           jQuery(".panel").append(
-            '<a class="h4 panel-block" href=\'#' +
+            '<a class="h4 panel-block has-text-link" href=\'#' +
               headingId +
               "'>" +
               headingText +
