@@ -31,7 +31,7 @@ Powered by [Google Style Guides](https://google.github.io/styleguide/)
 /* 非推奨：プロトコルの省略 */
 @import '//fonts.googleapis.com/css?family=Open+Sans';
 
-/* 非推奨: HTTPを利用 */
+/* 非推奨: HTTPの利用 */
 @import 'http://fonts.googleapis.com/css?family=Open+Sans';
 ```
 
@@ -42,23 +42,27 @@ Powered by [Google Style Guides](https://google.github.io/styleguide/)
 
 #### **2.1.2 Link**
 
-出来る限り絶対パスで記述する。また URL の index.html は省略する。参考: [HTML【URL】絶対パスと相対パス|プログラマカレッジ](https://programmercollege.jp/column/1159/)
+相対パスで記述する。URL の index.html は省略。
 
+```
 <!-- 非推奨 -->
-
 <a href="../style-guide/index.html">デザインシステムへ</a>
+```
 
+```
 <!-- 推奨 -->
-
 <a href="../style-guide/">デザインシステムへ</a>
+```
 
-/\* 非推奨 \*/
-
+```
+/* 非推奨 */
 background-image:url(../../img/style-guide/hero-sytle-guide.gif);
+```
 
-/\* 推奨 \*/
-
+```
+/* 推奨 */
 background-image:url(../img/style-guide/hero-sytle-guide.gif);
+```
 
 #### **2.1.3 クロスブラウザ**
 
