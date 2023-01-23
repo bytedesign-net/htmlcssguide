@@ -87,21 +87,25 @@ background-image:url(../img/style-guide/hero-sytle-guide.gif);
 
 全てのコードは小文字で記述する。HTML 要素名、属性、属性値（を除く text/CDATA）、CSS セレクター、プロパティ、およびプロパティ値（文字列を除く）に適用。
 
+```
 <!-- 非推奨 -->
-
 <A HREF="/">Home</A>
+```
 
+```
 <!-- 推奨 -->
-
 <img src="google.png" alt="Google">
+```
 
-/\* 非推奨 \*/
-
+```
+/* 非推奨 */
 color: #E5E5E5;
+```
 
-/\* 推奨 \*/
-
+```
+/* 推奨 */
 color: #e5e5e5;
+```
 
 #### **2.2.3 末尾の空白**
 
