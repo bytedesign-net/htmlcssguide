@@ -14,7 +14,7 @@ Powered by [Google Style Guides](https://google.github.io/styleguide/)
 
 `<image>`や`<media>`、`<script>` などのエンディベッドコンテンツ(埋め込み要素)には可能な限り https を利用する。
 
-```html code-ng
+```code-ng
 <!-- 非推奨：プロトコルの省略 -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
