@@ -28,13 +28,16 @@ Powered by [Google Style Guides](https://google.github.io/styleguide/)
 ```
 
 ```
-/* 非推奨：プロトコルの省略 */ @import
-'//fonts.googleapis.com/css?family=Open+Sans'; /* 非推奨: uses HTTP */ @import
-'http://fonts.googleapis.com/css?family=Open+Sans';
+/* 非推奨：プロトコルの省略 */
+@import '//fonts.googleapis.com/css?family=Open+Sans';
+
+/* 非推奨: HTTPを利用 */
+@import 'http://fonts.googleapis.com/css?family=Open+Sans';
 ```
 
 ```
-/* 推奨 */ @import 'https://fonts.googleapis.com/css?family=Open+Sans';
+/* 推奨 */
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
 ```
 
 #### **2.1.2 Link**
