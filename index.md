@@ -72,14 +72,14 @@ background-image:url(../img/style-guide/hero-sytle-guide.gif);
 
 ```
 <ul>
-`    `<li>Fantastic</li>
-`    `<li>Great</li>
+    <li>Fantastic</li>
+    <li>Great</li>
 </ul>
 ```
 
 ```
 .example {
-`    `color: blue;
+    color: blue;
 }
 ```
 
