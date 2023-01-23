@@ -68,21 +68,20 @@ background-image:url(../img/style-guide/hero-sytle-guide.gif);
 
 #### **2.2.1 インデント**
 
-インデントはタブ 1 つにする。Space は利用しない。
+インデントはタブ 1 個分。半角スペースは利用しない。
 
+```
 <ul>
-
 `    `<li>Fantastic</li>
-
 `    `<li>Great</li>
-
 </ul>
+```
 
+```
 .example {
-
 `    `color: blue;
-
 }
+```
 
 #### **2.2.2 大文字を使用しない**
 
