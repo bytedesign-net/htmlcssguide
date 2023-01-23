@@ -47,9 +47,7 @@ jQuery(document).ready(function () {
           jQuery(".panel").append(
             '<a class="h4 panel-block has-text-link" href=\'#' +
               headingId +
-              "' data-category=\"" +
-              heaadingText +
-              '">' +
+              ">" +
               headingText +
               "</a>"
           );
