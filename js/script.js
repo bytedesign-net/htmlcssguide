@@ -40,7 +40,7 @@ jQuery(document).ready(function () {
           jQuery(".panel").append('<p class="h2 mb-0">' + headingText + "</p>");
           if (i === 1) {
             jQuery(".panel-tabs is-active").append(
-              "<a>" + headingText + "</a>"
+              "<a data-target=" + headingText + ">" + headingText + "</a>"
             );
           } else {
             jQuery(".panel-tabs").append("<a>" + headingText + "</a>");
@@ -53,7 +53,9 @@ jQuery(document).ready(function () {
           jQuery(".panel").append(
             '<a class="h4 panel-block has-text-link" href=\'#' +
               headingId +
-              "'>" +
+              "' data-category=\"" +
+              heaadingText +
+              '">' +
               headingText +
               "</a>"
           );
