@@ -64,20 +64,6 @@ background-image:url(../../img/style-guide/hero-sytle-guide.gif);
 background-image:url(../img/style-guide/hero-sytle-guide.gif);
 ```
 
-#### **2.1.3 クロスブラウザ**
-
-非公式だが開発はモダンブラウザ(Chrome, Edge, Firefox の最新版, IE11)以上とする。
-
-上記ブラウザにて動作するように HTML5, CSS3, ECMA2015 で記述すること。
-
-ブラウザの下位互換性については[プログレッシブ・エンハンスメントやグレイスフル デグラデーション](https://www.adobe.com/jp/devnet/dreamweaver/articles/html5pack_css3_part6.html)を意識すること。
-
-![](Aspose.Words.69ea866f-6533-4747-b28e-0f989277c388.001.png)
-
-![](Aspose.Words.69ea866f-6533-4747-b28e-0f989277c388.001.png)
-
-HTML5&CSS3 入門 第 6 回 GRACEFUL DEGRADATION と POLYFILL|Adobe
-
 ### **2.2 共通のフォーマットルール**
 
 #### **2.2.1 インデント**
