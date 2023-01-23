@@ -11,12 +11,23 @@ function marked_js_render() {
 
   // code syntax hilightの編集
   renderer.code = function (code, language) {
-    return (
-      "<pre" +
-      '><code class="hljs">' +
-      hljs.highlightAuto(code).value +
-      "</code></pre>"
-    );
+    let string = hljs.highlightAuto(code).value;
+    const pattern = "非推奨";
+    if (string.indexOf(pattern) > -1) {
+      return (
+        '<pre class="code-ng"' +
+        '><code class="hljs">' +
+        hljs.highlightAuto(code).value +
+        "</code></pre>"
+      );
+    } else {
+      return (
+        '<pre class="code-ok"' +
+        '><code class="hljs">' +
+        hljs.highlightAuto(code).value +
+        "</code></pre>"
+      );
+    }
   };
 
   marked.setOptions({
