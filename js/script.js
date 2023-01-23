@@ -38,13 +38,7 @@ jQuery(document).ready(function () {
         let headingText = heading.text();
         if (heading.is("h2")) {
           jQuery(".panel").append('<p class="h2 mb-0">' + headingText + "</p>");
-          if (i === 1) {
-            jQuery(".panel-tabs is-active").append(
-              "<a data-target=" + headingText + ">" + headingText + "</a>"
-            );
-          } else {
-            jQuery(".panel-tabs").append("<a>" + headingText + "</a>");
-          }
+          jQuery(".panel-tabs").append("<p>" + headingText + "</p>");
         } else if (heading.is("h3")) {
           jQuery(".panel").append('<p class="h3 mb-0">' + headingText + "</p>");
         } else if (heading.is("h4")) {
