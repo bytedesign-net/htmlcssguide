@@ -238,11 +238,15 @@ HTML からリンクした css ファイルや js ファイルは分割せずに
 ```
 
 <!-- 非推奨 -->
-<html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
 <title>最悪なHTML</title>
 <link rel="stylesheet" href="base.css" media="screen">
 <link rel="stylesheet" href="grid.css" media="screen">
 <link rel="stylesheet" href="print.css" media="print">
+</head>
+<body>
 <h1 style="font-size: 1em;">HTML sucks</h1>
 <p>サイトで何度か見たことがありますが、今確信しました。<u>HTMLってバカじゃない!?</u>
 <center>わたしのサイトをスタイルする方法がないなんて信じられない!</center>
@@ -251,8 +255,12 @@ HTML からリンクした css ファイルや js ファイルは分割せずに
 ```
 <!-- 推奨 -->
 <!DOCTYPE html>
+<html lang="ja">
+<head>
 <title>初めてのCSSだけのデザイン</title>
 <link rel="stylesheet" href="default.css">
+</head>
+<body>
 <h1>初めてのCSSだけのデザイン</h1>
 <p>サイトで何度か見たことがありますが、今日は実際にそうしています。HTMLから装飾的なものを取り除き、相互関係をなくしています。</p>
 <p>すごいですね!
