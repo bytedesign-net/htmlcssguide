@@ -326,6 +326,30 @@ HTML5 では text/css と text/javascript はデフォルトで指定されて�
 <script src="js/script.js"></script>
 ```
 
+#### **3.1.8 `id`属性**
+
+不必要な`id`属性は避ける。
+
+`class`属性は装飾に、`data`属性は script に使用することを推奨します。
+
+`id`属性がどうしても必要な場合は、javaScript の命名規則(キャメルケース)と混同しないように、値に必ずハイフンを入れてください（例：id="profile", id="userProfile"ではなく、id="user-profile"とする）。
+
+要素に`id`属性がある場合、ブラウザはその `id`属性をグローバルウィンドウプロトタイプの名前付きプロパティとして利用できるようにしますが、これは予期せぬ振る舞いを引き起こす可能性があります。ハイフンを含む `id`属性の値はプロパティ名として利用可能ですが、グローバルな javaScript 変数として参照することはできません。
+
+```
+<!-- 非推奨: `window.userProfile`は<div>ノードを参照するために解決されます。 -->
+<div id="userProfile"></div>
+```
+
+```
+<!-- 推奨: `id` 属性は is 必須であり、値にはハイフンを含めます -->
+<div aria-describedby="user-profile">
+  …
+  <div id="user-profile"></div>
+  …
+</div>
+```
+
 #### **3.1.8 属性の書き順**
 
 HTML タグ内の属性の書き順は以下の通りとする。
