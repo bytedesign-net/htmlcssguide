@@ -221,61 +221,50 @@ void 要素は/で閉じない。例：`<br />`ではなく、 `<br>`と記述�
 
 ```
 <!-- 推奨 -->
-<img src="spreadsheet.png" alt="スプレッドシートのスクリーンショット.">
+<img src="spreadsheet.png" alt="スプレッドシートのスクリーンショット">
 <img src="padding.png" alt="">
 ```
 
 #### **3.1.5 関係の分離**
 
-HTML（構造）と CSS（見た目）と Script（振る舞い）は独立させて、3 つの相互関係はなるべく最小限にする。
+HTML（文書構造）と CSS（スタイル）と Script（動き、振る舞い）の相互関係をできるだけなくし、独立させる。
 
-ドキュメントやテンプレートには HTML だけを含むようにし、HTML には構造だけを表現するようにする。
+ドキュメントやテンプレートには HTML の記述のみとし、文書構造だけの記述にしてください。
 
-見た目に関するあらゆる内容は CSS へ、振る舞いに関しては Script へ記述する。
+スタイルに関する記述は css ファイルへ、振る舞いに関しては js ファイルへ記述にしてください。
 
-HTML から CSS や Script へのリンクはなるべく減らすかファイルをまとめる。CSS や Script は少ない記述であれば外部リンク化せず HTML 内の一か所にまとめて記述する。
+HTML 上の css ファイルや js ファイルは分割せずに単一のファイルをまとめることでリンクを減らすことができます。
+
+```
 
 <!-- 非推奨 -->
-
 <html>
-
 <title>HTML sucks</title>
-
 <link rel="stylesheet" href="base.css" media="screen">
-
 <link rel="stylesheet" href="grid.css" media="screen">
-
 <link rel="stylesheet" href="print.css" media="print">
-
 <h1 style="font-size: 1em;">HTML sucks</h1>
-
 <p>I’ve read about this on a few sites but now I’m sure:
-
 `  `<u>HTML is stupid!!</u>
-
 <center>I can’t believe there’s no way to control the styling of
-
 `  `my website without doing everything all over again!</center>
+```
 
+```
 <!-- 推奨 -->
-
 <!DOCTYPE html>
-
 <title>My first CSS-only redesign</title>
-
 <link rel="stylesheet" href="default.css">
-
 <h1>My first CSS-only redesign</h1>
-
 <p>I’ve read about this on a few sites but today I’m actually
-
 `  `doing it: separating concerns and avoiding anything in the HTML of
-
 `  `my website that is presentational.
-
 <p>It’s awesome!
+```
+
 #### **3.1.6 実体参照**
-基本的にUTF-8では実体参照は使用しない。(楽天GOLDはEUC-JPなので例外を許可)
+
+基本的に UTF-8 では実体参照は使用しない。(楽天 GOLD は EUC-JP なので例外を許可)
 
 実体参照を使用する前に機種依存でない全角文字があればそちらを使用する。
 
