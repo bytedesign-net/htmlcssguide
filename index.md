@@ -167,7 +167,7 @@ void 要素は/で閉じない。例：`<br />`ではなく、 `<br>`と記述�
 
 #### **3.1.2 HTML バリデーション**
 
-[HTML5 コンテンツモデルガイド](https://webgoto.net/html5/)に従い、セマンティックな(文書構造にあった)マークアップを心がける。
+[コンテンツモデル](https://developer.mozilla.org/ja/docs/Web/HTML/Content_categories)に従い、セマンティックな(文書構造にあった)マークアップを心がける。
 
 [W3C HTML validator](https://validator.w3.org/nu/)のようなバリデーションツールを使用してテストする。
 
