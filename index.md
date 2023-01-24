@@ -397,10 +397,9 @@ HTML5 では text/css と text/javascript はデフォルトで指定されて�
 
 HTML 文字の列を制限するような推奨はしませんが、読みやすくなる場合は長い行を折り返すとよいでしょう。
 
-折り返す場合は、折り返した属性と子要素を区別するために、元の行を基準に最低 1 つのタブを追加してインデントしてください。
+折り返す場合は、折り返した属性と子要素を区別するために、元の行を基準に最低 1 つタブを追加してインデントしてください。
 
 ```
-<!-- 非推奨 -->
 <md-progress-circular
     md-mode="indeterminate"
     class="md-accent"
@@ -410,7 +409,6 @@ HTML 文字の列を制限するような推奨はしませんが、読みやす
 ```
 
 ```
-<!-- 非推奨 -->
 <md-progress-circular md-mode="indeterminate"
     class="md-accent"
     ng-show="ctrl.loading"
@@ -419,7 +417,6 @@ HTML 文字の列を制限するような推奨はしませんが、読みやす
 ```
 
 ```
-<!-- 推奨 -->
 <md-progress-circular md-mode="indeterminate" class="md-accent" ng-show="ctrl.loading" md-diameter="35"></md-progress-circular>
 ```
 
