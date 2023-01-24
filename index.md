@@ -233,40 +233,36 @@ HTML（文書構造）と CSS（スタイル）と Script（動き、振る舞�
 
 スタイルに関する記述は css ファイルへ、振る舞いに関しては js ファイルへ記述にしてください。
 
-HTML 上の css ファイルや js ファイルは分割せずに単一のファイルをまとめることでリンクを減らすことができます。
+HTML からリンクした css ファイルや js ファイルは分割せずに単一のファイルをまとめることでリンクを減らすことができます。
 
 ```
 
 <!-- 非推奨 -->
 <html>
-<title>HTML sucks</title>
+<title>最悪なHTML</title>
 <link rel="stylesheet" href="base.css" media="screen">
 <link rel="stylesheet" href="grid.css" media="screen">
 <link rel="stylesheet" href="print.css" media="print">
 <h1 style="font-size: 1em;">HTML sucks</h1>
-<p>I’ve read about this on a few sites but now I’m sure:
-`  `<u>HTML is stupid!!</u>
-<center>I can’t believe there’s no way to control the styling of
-`  `my website without doing everything all over again!</center>
+<p>サイトで何度か見たことがありますが、今確信しました。<u>HTMLってバカじゃない!?</u>
+<center>わたしのサイトをスタイルする方法がないなんて信じられない!</center>
 ```
 
 ```
 <!-- 推奨 -->
 <!DOCTYPE html>
-<title>My first CSS-only redesign</title>
+<title>初めてのCSSだけのデザイン</title>
 <link rel="stylesheet" href="default.css">
-<h1>My first CSS-only redesign</h1>
-<p>I’ve read about this on a few sites but today I’m actually
-`  `doing it: separating concerns and avoiding anything in the HTML of
-`  `my website that is presentational.
-<p>It’s awesome!
+<h1>初めてのCSSだけのデザイン</h1>
+<p>サイトで何度か見たことがありますが、今日は実際にそうしています。HTMLから装飾的なものを取り除き、相互関係をなくしています。</p>
+<p>すごいですね!
 ```
 
 #### **3.1.6 実体参照**
 
-基本的に UTF-8 では実体参照は使用しない。(楽天 GOLD は EUC-JP なので例外を許可)
+実体参照は使用しない。
 
-実体参照を使用する前に機種依存でない全角文字があればそちらを使用する。
+`&mdash;`(&mdash;)`&rdquo;`(&rdquo;)`&#x263a;`(&#x263a;)のような実体参照は必要ありません。を使用する前に機種依存でない全角文字があればそちらを使用する。
 
 | 非推奨 | &nbsp;  |     | 半角スペース                                                         |
 | :----- | :------ | :-- | :------------------------------------------------------------------- |
