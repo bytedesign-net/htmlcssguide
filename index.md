@@ -326,7 +326,7 @@ HTML5 では text/css と text/javascript はデフォルトで指定されて�
 <script src="js/script.js"></script>
 ```
 
-#### **3.1.8 `id`属性**
+#### **3.1.9 `id`属性**
 
 不必要な`id`属性は避ける。
 
@@ -348,49 +348,6 @@ HTML5 では text/css と text/javascript はデフォルトで指定されて�
   <div id="user-profile"></div>
   …
 </div>
-```
-
-#### **3.1.8 属性の書き順**
-
-HTML タグ内の属性の書き順は以下の通りとする。
-
-1. id 属性
-1. class 属性
-1. style 属性
-1. WAI-AIRA(role 属性と aria-属性)
-1. data-属性
-1. Micorodata(item\*属性)
-
-<!-- 非推奨 -->
-
-<p class="font-weight-bold" id="anchor1">idよりclassが先頭</p>
-
-<!-- 推奨 -->
-
-<p id="anchor1" class="font-weight-bold">classよりidが先頭</p>
-#### **3.1.9 type 属性**
-スタイルシートとスクリプトのタイプ属性は省略する。
-
-HTML5 ではデフォルトで解釈されるため必要ない。
-
-```code-ng
-<!-- 非推奨 -->
-<link rel="stylesheet" href="https://www.google.com/css/maia.css" type="text/css">
-```
-
-```code-ok
-<!-- 推奨 -->
-<link rel="stylesheet" href="https://www.google.com/css/maia.css">
-```
-
-```code-ng
-<!-- 非推奨 -->
-<script src="https://www.google.com/js/gweb/analytics/autotrack.js" type="text/javascript"></script>
-```
-
-```code-ok
-<!-- 推奨 -->
-<script src="https://www.google.com/js/gweb/analytics/autotrack.js"></script>
 ```
 
 ### **3.2 HTML のフォーマットのルール**
