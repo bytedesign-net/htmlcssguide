@@ -391,41 +391,37 @@ HTML5 では text/css と text/javascript はデフォルトで指定されて�
 </table>
 ```
 
-#### **3.2.2 HTML の改行**
+#### **3.2.2 HTML 改行**
 
-HTML のタグは改行しない
+長い行は適宜改行する。
 
-長くなる場合はエディタの自動改行に任せ、手動で改行しない。
+HTML 文字の列を制限するような推奨はしませんが、読みやすくなる場合は長い行を折り返すとよいでしょう。
 
+折り返す場合は、折り返した属性と子要素を区別するために、元の行を基準に最低 1 つのタブを追加してインデントしてください。
+
+```
 <!-- 非推奨 -->
-
 <md-progress-circular
-
-`    `md-mode="indeterminate"
-
-`    `class="md-accent"
-
-`    `ng-show="ctrl.loading"
-
-`    `md-diameter="35">
-
+    md-mode="indeterminate"
+    class="md-accent"
+    ng-show="ctrl.loading"
+    md-diameter="35">
 </md-progress-circular>
+```
 
+```
 <!-- 非推奨 -->
-
 <md-progress-circular md-mode="indeterminate"
-
-`    `class="md-accent"
-
-`    `ng-show="ctrl.loading"
-
-`    `md-diameter="35">
-
+    class="md-accent"
+    ng-show="ctrl.loading"
+    md-diameter="35">
 </md-progress-circular>
+```
 
+```
 <!-- 推奨 -->
-
 <md-progress-circular md-mode="indeterminate" class="md-accent" ng-show="ctrl.loading" md-diameter="35"></md-progress-circular>
+```
 
 #### **3.2.3 HTML の引用符(クオーテーション)**
 
