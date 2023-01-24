@@ -159,13 +159,11 @@ UTF-8(BOM 無し)を使用する。
 
 #### **3.1.1 ドキュメントタイプ**
 
-HTML5 を使用する。XHMTL との混在は避ける。
+HTML5 を使用する。
 
-すべての HTML の文頭に<!doctype html> <html>を記述する
+HTML の開始は`<!doctype html>` `<html>`と記述する。
 
-(text/html は使用せず、HTML を使用することを推奨します。[XHTMLapplication/xhtml+xml](https://hixie.ch/advocacy/xhtml)は, ブラウザーとインフラストラクチャ両方がサポートされず、HTML よりも最適化の余地が少なくなります。)
-
-void 要素は/で閉じてはいけない。例：<br />ではなく、 <br>と記述する。
+void 要素は/で閉じない。例：`<br />`ではなく、 `<br>`と記述する。
 
 #### **3.1.2 HTML バリデーション**
 
