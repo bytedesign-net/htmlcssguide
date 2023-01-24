@@ -1,6 +1,6 @@
 ﻿# **HTML・CSS コーディングガイドライン**
 
-Powered by [Google Style Guides](https://google.github.io/styleguide/), [@tsunogai](https://qiita.com/tsunogai/items/05b944debbcac35fbc18)様
+Powered by [Google Style Guides](https://google.github.io/styleguide/), [@tsunogai](https://qiita.com/tsunogai/items/05b944debbcac35fbc18)様(CC BY 3.0)
 
 ## **1.はじめに**
 
