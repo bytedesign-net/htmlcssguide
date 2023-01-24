@@ -384,8 +384,8 @@ HTML5 では text/css と text/javascript はデフォルトで指定されて�
     </thead>
     <tbody>
         <tr>
-            <td>￥ 500</td>
-            <td>￥ 450</td>
+            <td>\500</td>
+            <td>\450</td>
         </tr>
     </tbody>
 </table>
