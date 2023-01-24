@@ -161,7 +161,7 @@ UTF-8(BOM 無し)を使用する。
 
 HTML5 を使用する。
 
-HTML の開始は`<!doctype html>` `<html>`と記述する。
+HTML の開始は`<!DOCTYPE html>` `<html>`と記述する。
 
 void 要素は/で閉じない。例：`<br />`ではなく、 `<br>`と記述する。
 
@@ -174,12 +174,13 @@ void 要素は/で閉じない。例：`<br />`ではなく、 `<br>`と記述�
 ```
 <!-- 非推奨 -->
 <title>テスト</title>
-<article>これはテストです。</article>
+<article>これはテストです。
 ```
 
 ```
 <!-- 推奨 -->
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <meta charset="utf-8">
 <title>テスト</title>
 <article>これはテストです。</article>
