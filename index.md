@@ -440,132 +440,44 @@ HTML 文字の列を制限するような推奨はしませんが、読みやす
 
 #### **4.1.1 CSS バリデーション**
 
-に定義されているような
+<s>W3C が定義する HTML5/HTML5.1 に準拠した CSS を使用してください。</s>
+CSS バリデータのバグや独自の構文が必要な場合を除き、WHATWG が定義する [HTML Living Standard](https://momdo.github.io/html/) に準拠した CSS を使用してください。
 
-<s>W3C が定義する HTML5/HTML5.1</s>WHATWG が定義する HTML Living Standard に準拠した CSS を使用してください。
+[Nu Html Checker(HTML/CSS バリデーター)](https://validator.w3.org/nu/)のツールでテストしてください。
 
-独自の定義が必要な場合を除き適切な CSS を使用してください。
-
-[W3C CSS validator](https://jigsaw.w3.org/css-validator/)のツールを使用してテストできる。
-
-適切な CSS を使用することで無駄な CSS を除いて、一定の品質を保証します。
+これらにより廃止されたプロパティや変更されたプロパティを見つることができるので CSS コードの一定の品質を保持することができます。
 
 #### **4.1.2 クラスの命名規則**
 
-意味がある、共通の ID とクラス名を使用する。
+理解しやすく、一般的なクラス名を使用する。
 
-フレームワーク(Bootstrap 等)を使用している場合はそのフレームワークに合わせた命名規則に沿った命名を行う。
+要素の外観を示す命名や暗号のような意味が伝わらない命名をせず、その要素の目的を反映した命名、あるいは一般的な命名を行ってください。
 
-.btn-primary や .btn-danger といった既存には無いユーティリティを追加する時や、既存コンポーネントを継承して新しいコンポーネントを作るなど Bootstrap に依存した拡張をするときに行う方法です。Bootstrap が読み込まれている事が前提になっている以上、Bootstrap の一部として考える為、命名規則も Bootstrap と同じ全て - 区切りで命名します。またサイズに関するユーティリティに関しては、small サイズなら -sm、large サイズなら -lg などといった表記も既存のそれに合わせて省略したのもを命名します。
+要素の目的を反映した命名は理解しやすく、コードの修正にも強いです。
 
-Bootstrap の命名に沿わないコンポーネントを自作する場合は[](https://tech-dig.jp/bem-css-html/)BEM の設計思想を踏まえて命名します。
+一般的な命名は、目的がなく兄弟要素場合の補助的な命名手段です。
 
-##### **Bootstrap+BEM を取り入れた独自の命名規則**
+機能名や一般名を使用することで、不要な記述やコードの修正を減らすことができます。
 
-複数の単語になる場合はハイフン(-)でつなぐ。ただしハイフンは 2 つまでとする。
+```
+/* 非推奨: 意味がわからない命名 */
+.yee-1901 {}
 
-ネスト(階層)はアンダースコア(\_)でつなぐ。アンダースコアは 1 つまでとする
+/* 非推奨: 要素の外観を示すような命名 */
+.button-green {}
+.clear {}
+```
 
-<div class="block\_element-lg"></div>
-
-Bootstrap 同様にマルチクラスを利用する
-
-<!-- 非推奨 シングルクラス -->
-
-.block, .block-modifier {
-
-`    `width: 100%;
-
-}
-
-.block_element, .block_element-modifier, .block-modifier_element {
-
-`    `background-color: blue;
-
-`    `margin-left: 10px;
-
-`    `width: 25%;
-
-}
-
-.block_element-modifier {
-
-`    `background-color: red;
-
-}
-
-.block-modifier {
-
-`    `margin-top: 20px;
-
-}
-
-.block-modifier_element {
-
-`    `background-color: green;
-
-}
-
-シングルクラスの利点は、HTML 側で指定するクラスが一つで事足りるのでコード量が少なくシンプルになる、
-デザイン崩れのリスクを抑えることが出来るというのがあげられますが、
-デザインのパターンの柔軟性が乏しくなるという欠点も持ち合わせます。
-
-<!-- 推奨 マルチクラス -->
-
-.block {
-
-`    `width: 100%;
-
-}
-
-.block .block_element {
-
-`    `background-color: blue;
-
-`    `margin-left: 10px;
-
-`    `width: 25%;
-
-}
-
-.block .block_element.block_element-modifier {
-
-`    `background-color: red;
-
-}
-
-.block.block-modifier {
-
-`    `margin-top: 20px;
-
-}
-
-.block.block-modifier .block-modifier_element {
-
-`    `background-color: green;
-
-}
-
-マルチクラスは柔軟性が高いという利点がありますが、
-HTML 側で指定するクラスが多くなるのと指定ミスでデザインが崩れるという欠点もあります。
-
-/\* 非推奨: 意味を持たない \*/
-
-#yee-1901 {}
-
-/\* 推奨: 具体的 \*/
-
-#gallery {}
-
-#login {}
-
+```
+/* 推奨: 具体的な命名 */
+.gallery {}
+.login {}
 .video {}
 
-/\* 推奨: 共通 \*/
-
+/* 推奨: 一般的な命名 */
 .aux {}
-
 .alt {}
+```
 
 #### **4.1.3 ID とクラス名のスタイル**
 
