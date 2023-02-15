@@ -630,19 +630,23 @@ HEX は可能であれば 3 桁にする。
 
 ```
 /* 非推奨 */
-color: #eebbcc;
+.example {
+  font-weight: bold !important;
+}
 ```
 
 ```
 /* 推奨 */
-color: #ebc;
+.example {
+  font-weight: bold;
+}
 ```
 
 #### **4.1.12 !important 宣言**
 
 important 宣言は使わないでください。
 
-これらの宣言は、CSS の自然なカスケードを壊し、スタイルを推論し構成することを困難にします。代わりに、セレクタを使用してプロパティを上書きしてください。
+これらの宣言は、CSS の優先順位で適用する仕組みを阻害してしまいます。代わりにセレクタの詳細度を上げてプロパティを上書きするようにしてください。
 
 ```
 /* 非推奨 */
@@ -658,208 +662,246 @@ important 宣言は使わないでください。
 }
 ```
 
-#### **4.1.11 ハック**
+#### **4.1.11 CSS ハック**
 
-!important の使用は非推奨だが、理由のコメント付きで使用することは許可する。ネガティブマージンも同様。ただし、多用することは禁止。
+ユーザーエージェントや CSS ハックによるスタイルは避けてください。
 
-CSS を使用した特定のブラウザや OS に対する UA(ユーザーエージェント)の判定は避ける。違うアプローチを先に試す。
-
-#### **4.1.12 ベンダープレフィックス**
-
-ベンダープレフィックスについては推奨環境のブラウザが対応している場合は不要とする。
-
-具体的な基準は[Autoprefixer CSS online](https://autoprefixer.github.io/)にて任意のソースを貼り付け、Browserslist を [last 1 version](最新のバージョン)に変更したうえで、ベンダープレフィックスが付与されないもの。
-
-flex, transform, transition, @keyframes, animation-, background: linear-gradient はプレフィックスは必要。(2020 年 5 月現在)
-
-#### **4.1.12 メディアクエリ**
-
-原則、ブレイクポイントが小さいものから優先して記載する(モバイルファースト)
-
-メディアクエリの記述は CSS ファイルの 1 か所にまとめるのではなく、コンポーネントごとに記述する。
-
-ブレイクポイントについては Bootstrap4 の仕様＋独自の拡張ポイントは以下のとおりとする。
-
-|               **xs(スマホ横以上 \*拡張)**                | 320px(コンテナー最大幅: 345px)   |
-| :------------------------------------------------------: | :------------------------------- |
-|                   **sm(スマホ横以上)**                   | 576px(コンテナー最大幅: 540px)   |
-|                  **md(タブレット以上)**                  | 768px(コンテナー最大幅: 720px)   |
-| **lg(低解像度デスクトップまたは高解像度タブレット以上)** | 992px(コンテナー最大幅: 960px)   |
-|           **xl(デスクトップまたはノート以上)**           | 1200px(コンテナー最大幅: 1140px) |
-|       **xxl(デスクトップまたはノート以上 \*拡張)**       | 1400px(コンテナー最大幅: 1320px) |
-
-/\* レスポンシブ対応のメディアクエリの SCSS の記述例 \*/
-
-/\*-----------------------------------------\*/
-
-/\* この宣言を SCSS ファイルの冒頭に記載する \*/
-
-/\*-----------------------------------------\*/
-
-//min-width
-
-$breakpoint-up: (
-
-`    `'xs': 'screen and (min-width: 320px)',
-
-`    `'sm': 'screen and (min-width: 576px)',
-
-`    `'md': 'screen and (min-width: 768px)',
-
-`    `'lg': 'screen and (min-width: 992px)',
-
-`    `'xl': 'screen and (min-width: 1200px)',
-
-`    `'xxl': 'screen and (min-width: 1400px)',
-
-) !default;
-
-//max-width
-
-$breakpoint-down: (
-
-`    `'xs': 'screen and (min-width: 319px)',
-
-`    `'sm': 'screen and (min-width: 575px)',
-
-`    `'md': 'screen and (min-width: 767px)',
-
-`    `'lg': 'screen and (min-width: 991px)',
-
-`    `'xl': 'screen and (min-width: 1199px)',
-
-`    `'xxl': 'screen and (min-width: 1399px)',
-
-) !default;
-
-//@mixin の定義
-
-@mixin mq-up($breakpoint: md) { // 初期値は md をセット
-
-`    `@media #{map-get($breakpoint-up, $breakpoint)} {
-
-`        `@content;
-
-`    `}
-
-}
-
-@mixin mq-down($breakpoint: md) { // 初期値は md をセット
-
-`    `@media #{map-get($breakpoint-down, $breakpoint)} {
-
-`        `@content;
-
-`    `}
-
-}
-
-/\*-----------------------------------------\*/
-
-/\* 特大ボタンを min-width を使用して作成する例 \*/
-
-/\*-----------------------------------------\*/
-
-.btn-big {
-
-`    `padding: 1rem 2rem;
-
-`    `border-radius: .6rem;
-
-`    `font-size: 2.5rem;
-
-`    `line-height: 3;
-
-`    `@include mq-up(xs) { // 320px 以上の幅の場合
-
-`        `font-size: 2.5rem;
-
-`    `}
-
-`    `@include mq-up(sm) { // 576px 以上の幅の場合
-
-`        `font-size: 2.8rem;
-
-`    `}
-
-`    `@include mq-up() { // 768px 以上の幅の場合 mq-up(md)と書いても OK
-
-`        `font-size: 3rem;
-
-`    `}
-
-`    `@include mq-up(lg) { // 992px 以上の幅の場合
-
-`        `font-size: 3.2rem;
-
-`    `}
-
-`    `@include mq-up(xl) { // 1200px 以上の幅の場合
-
-`        `font-size: 3.5rem;
-
-`    `}
-
-`    `@include mq-up(xxl) { // 1400px 以上の幅の場合
-
-`        `font-size: 3.8rem;
-
-`    `}
-
-}
-
-#### **4.1.13 Z-index**
-
-Z-index については以下のルールとする。
-
-- position プロパティを必ず併用する (position: static 以外)
-- 整数値のみ
-- z-index は以下の有効範囲内を意識する
-
-|           **範囲**            |                                      **コンテンツタイプ**                                      |                                                                                                                                                                                                                 **説明**                                                                                                                                                                                                                 |
-| :---------------------------: | :--------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|   -1(これ以下は禁止とする)    |                                        背景要素<br>body                                        |                                                                                                                                                                                                                 特になし                                                                                                                                                                                                                 |
-| 0(z-index プロパティ指定なし) |                  メインコンテンツ・通常の広告<br>main, article, section など                   |                                                                                                                                                                                                     通常のコンテンツと一緒に置く広告                                                                                                                                                                                                     |
-|            0 ～ 3             |     Bootstrap のコンポーネント要素<br>ボタングループ、インプットグループ、ページネーション     |                                                                                                                                                                                 0 はデフォルト（初期値）、1 は :hover、2 は :active/.active、3 は :focus                                                                                                                                                                                 |
-|         1000 〜 1070          |                                  Bootstrap のオーバーレイ要素                                  | <p>ツールチップ、ポップオーバー、ナビゲーションバー、ドロップダウン、モーダルなど </p><p>$zindex-dropdown:          1000 !default;</p><p>`    `$zindex-sticky: 1020 !default;</p><p>`    `$zindex-fixed:             1030 !default;</p><p>`    `$zindex-modal-backdrop: 1040 !default;</p><p>`    `$zindex-modal:             1050 !default;</p><p>`    `$zindex-popover: 1060 !default;</p><p>`    `$zindex-tooltip: 1070 !default;</p> |
-|      5,000 〜 1,999,999       |                                            拡張広告                                            |                                                                                                                                                                                        ポップアップ広告など、画面手前に現れることがあるバナーなど                                                                                                                                                                                        |
-|    5,000,000 〜 5,999,999     | サイトナビゲーションに関する重要な拡張要素<br>header, footer, aside, nav, button, h1, ロゴなど |                                                                                                                                                                                  ドロップダウンナビゲーションや警告のモーダルなど、画面を覆うような要素                                                                                                                                                                                  |
+ユーザーエージェントの検出したり、特殊な CSS フィルターやハックによってブラウザ別にスタイルすることは魅力的に感じるかもしれません。
+しかし効率よく管理されたソースコードを実現にすることが最も重要と考え、最終手段としてください。
+ブラウザ別にスタイルするために CSS ハックなどを行うと、コードが複雑になり保守が難しくなってしまいます。
 
 ### **4.2 CSS フォーマットルール**
 
 #### **4.2.1 プロパティの記述順序**
 
-大まかに以下の順で記述する。
+プロパティはアルファベット順で記述する(任意)。
+
+プロジェクトにより一貫したルールに沿って順番にプロパティを記述します。
+
+並び替えのルールに沿って自動で並び変える機能やツールが使えない場合、プロパティをアルファベット順に並べる、習慣、記憶しやすい、手作業による保守が容易な順番などというルールを決めて運用することで一貫したコードを実現できます。
+
+並び替えの際はベンダープレフィックスは無視します。
+
+ただし、ある CSS プロパティに対し複数のベンダープレフィックスを記述する場合は、その並び順はプロジェクト単位で統一する必要があります（例：-moz の次に-webkit を記述する）。
+
+```
+background: fuchsia;
+border: 1px solid;
+-moz-border-radius: 4px;
+-webkit-border-radius: 4px;
+border-radius: 4px;
+color: black;
+text-align: center;
+text-indent: 2em;
+```
+
+<small>※Google はアルファベット順になっていますが、視覚整形モデルを適用するのが一般的です。</small>
+
+##### **視覚整形モデル**
 
 - display
+- flex
+
+  - flex-grow
+  - flex-shrink
+  - flex-basis
+
+- flex-flow
+
+  - flex-direction
+  - flex-wrap
+
+- justify-content
+- align-content
+- align-items
+- align-self
+- order
+- visibility
+- opacity
+- clip ※Deprecated
+- clip-path
 - list-style
+
+  - list-style-type
+  - list-style-position
+  - list-style-image
+
 - position
+- top
+- right
+- bottom
+- left
+- z-index
 - float
 - clear
+- transform
+
+##### **ボックスモデル**
+
 - width
+- min-width
+- max-width
 - height
+- min-height
+- max-height
 - margin
+
+  - margin-top
+  - margin-right
+  - margin-bottom
+  - margin-left
+
 - padding
+
+  - padding-top
+  - padding-right
+  - padding-bottom
+  - padding-left
+
+- overflow
+
+  - overflow-x
+  - overflow-y
+
 - border
+
+  - border-width
+
+    - border-top-width
+    - border-right-width
+    - border-bottom-width
+    - border-left-width
+
+  - border-style
+
+    - border-top-style
+    - border-right-style
+    - border-bottom-style
+    - border-left-style
+
+  - border-color
+
+    - border-top-color
+    - border-right-color
+    - border-bottom-color
+    - border-left-color
+
+  - border-image
+
+    - border-image-source
+    - border-image-slice
+    - border-image-width
+    - border-image-outset
+    - border-image-repeat
+
+  - border-radius
+
+    - border-top-left-radius
+    - border-top-right-radius
+    - border-bottom-right-radius
+    - border-bottom-left-radius
+
+- box-sizing
+- box-shadow
+
+##### **背景**
+
 - background
+
+  - background-image
+  - background-position
+  - background-size
+  - background-repeat
+  - background-origin
+  - background-clip
+  - background-attachment
+  - background-color
+
+##### **色**
+
 - color
+
+##### **フォント・テキスト**
+
 - font
+
+  - font-style
+  - font-variant
+  - font-weight
+  - font-stretch
+  - font-size
+  - line-height
+  - font-family
+
+- letter-spacing
 - text-decoration
+
+  - text-decoration-color
+  - text-decoration-style
+  - text-decoration-line
+
 - text-align
-- vertical-align
+- text-indent
+- text-transform
 - white-space
-- other text
+- word-break
+- word-spaciing
+- word-wrap
+- text-shadow
+
+##### **表**
+
+- table-layout
+- border-collapse
+- border-spacing
+- empty-cells
+- caption-side
+- vertical-align
+
+##### **UI**
+
 - content
+- quotes
+- counter-increment
+- counter-reset
+- outline
 
-![Mozzilaのプロパティ記述順](Aspose.Words.69ea866f-6533-4747-b28e-0f989277c388.001.png)
+  - outline-color
+  - outline-style
+  - outline-width
 
-[【CSS】CSS プロパティの記述順について考えてみた|unitopi](http://unitopi.com/css-order/)
+- cursor
+- resize
 
-宣言ブロック、宣言とプロパティ
+##### **アニメーション**
 
-![](Aspose.Words.69ea866f-6533-4747-b28e-0f989277c388.001.png)
+- transition
 
----
+  - transition-property
+  - transition-duration
+  - transition-timing-function
+  - transition-delay
+
+- animation
+
+  - animation-name
+  - animation-duration
+  - animation-timing-function
+  - animation-delay
+  - animation-iteration-count
+  - animation-direction
+  - animation-fill-mode
+  - animation-play-state
+
+##### **その他**
+
+- unicode-bidi
+- direction
+- page-break-before
+- page-break-after
+- page-break-inside
+- widows
+- orphans
 
 #### **4.2.2 宣言の末尾**
 
